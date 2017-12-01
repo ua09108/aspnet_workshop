@@ -142,6 +142,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="jQuery\callwebmethod.aspx" />
+    <Content Include="jQuery\insertdatabyjquery.aspx" />
     <Content Include="jQuery\jsontrasnfertoashx.aspx" />
     <Content Include="jQuery\ReadExcelDataByjQuery.html" />
     <Content Include="Scripts\bootstrap.js" />
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="jQuery\callwebmethod.aspx.designer.cs">
       <DependentUpon>callwebmethod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jQuery\insertdatabyjquery.aspx.cs">
+      <DependentUpon>insertdatabyjquery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jQuery\insertdatabyjquery.aspx.designer.cs">
+      <DependentUpon>insertdatabyjquery.aspx</DependentUpon>
     </Compile>
     <Compile Include="jQuery\jsontrasnfertoashx.aspx.cs">
       <DependentUpon>jsontrasnfertoashx.aspx</DependentUpon>
