@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<link href="../Content/jsontransferashx2.css" rel="stylesheet" />
+
+
+<script type="text/javascript">
+    $(function () {
+        //we bind the submit click function
+        $("#btnSubmitJSON").click(function () {
+            var nameValue = $("#txtName").val();
+            var emailValue = $("#txtEmail").val();
+            var contactValue = $("#txtContactNo").val();
+
+
+            //we just use a quick check if the value are empty or not
+            if (nameValue != "" && emailValue != "" && contactValue != "") {
+                //we can hide the button just to make sure user does not click the button during the progress.
+                $("#btnSubmitJSON").show();
+
+                //we can output ajax icon loading so the user know it is in progress.
+                $("#output").html("<img src=\"/images/loading2.gif\" /> Please wait, we are processing your request.");
+
+                //we build the json string
+                var jsonData = {
+                    'Name': nameValue,
+                    'Email': emailValue,
+                    'Contact': contactValue
+                }
+
+                //note in order to proper pass a json string, you have to use function JSON.stringfy
+                jsonData = JSON.stringify(jsonData);
+
+
+                $.ajax({
+                    url: "../WebService/jsontransferashx2.ashx", //make sure the path is correct
+                    cache: false,
+                    type: 'POST',
+                    data: jsonData,
+                    success: function (response) {
+                        //output the response from server
+                        $("#output").html(response);
+
+                        //we clean up the data
+                        $("#txtName").val("");
+                        $("#txtEmail").val("");
+                        $("#txtContactNo").val("");
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        $("#output").html(xhr.responseText);
+                        $("#btnSubmitJSON").show();
+                    }
+                })
+            } else {
+                $("#output").html("Please enter all fields.");
+            }
+        });
+    });
+</script>
+
+
+
+<body>
+    <div class="row">
+        <div class="rowlabel">Name:</div>
+        <div class="rowinput"><input type="text" id="txtName" value="" /></div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="row">
+        <div class="rowlabel">Email:</div>
+        <div class="rowinput"><input type="text" id="txtEmail" value="" /></div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="row">
+        <div class="rowlabel">Contact No:</div>
+        <div class="rowinput"><input type="text" id="txtContactNo" value="" /></div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="row">
+        <div class="rowlabel nobg">&#160;</div>
+        <div class="rowinput"><input type="button" id="btnSubmitJSON" value="Submit" class="submitbutton" /></div>
+        <div class="clear"></div>
+    </div>
+    <div id="output"></div>
+</body>
+</html>

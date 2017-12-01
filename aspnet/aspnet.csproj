@@ -130,6 +130,7 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jsontransferashx2.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -141,8 +142,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\loading2.gif" />
     <Content Include="jQuery\callwebmethod.aspx" />
     <Content Include="jQuery\insertdatabyjquery.aspx" />
+    <Content Include="jQuery\jsontransferashx2.html" />
     <Content Include="jQuery\jsontrasnfertoashx.aspx" />
     <Content Include="jQuery\ReadExcelDataByjQuery.html" />
     <Content Include="Scripts\bootstrap.js" />
@@ -182,6 +185,7 @@
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="webservice\callwebmethod.ashx" />
+    <Content Include="webservice\jsontransferashx2.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -256,10 +260,12 @@
     <Compile Include="webservice\callwebmethod.ashx.cs">
       <DependentUpon>callwebmethod.ashx</DependentUpon>
     </Compile>
+    <Compile Include="webservice\jsontransferashx2.ashx.cs">
+      <DependentUpon>jsontransferashx2.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="html\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,0 +1,47 @@
+﻿<style type="text/css" > .row {
+    padding-bottom: 5px;
+    display: block;
+    clear: both;
+}
+
+.rowlabel {
+    float: left;
+    width: 110px;
+    background: #1a66b5;
+    padding: 5px 10px;
+    color: #fff;
+    text-align: right;
+}
+
+.rowinput {
+    float: left;
+    margin-left: 10px;
+    width: 220px;
+}
+
+    .rowinput input {
+        width: 200px;
+        height: 30px;
+        line-height: 30px;
+        border: solid 1px #ccc;
+        border-radius: 5px;
+    }
+
+.nobg {
+    background: none;
+}
+
+.submitbutton {
+    cursor: pointer;
+}
+
+    .submitbutton:hover {
+        background: #2636d1;
+        color: #fff;
+    }
+
+.clear {
+    clear: both;
+}
+
+</style >
